@@ -1,23 +1,30 @@
 {
-  "name": "sass-tuto",
+  "name": "sass-project-starter",
   "version": "1.0.0",
-  "description": "sass",
+  "description": "",
   "main": "index.js",
   "scripts": {
     "watch:sass": "node-sass sass/main.scss css/style.css -w",
-    "compiler:sass": "node-sass sass/main.scss css/style.css",
-    "start": "concurrently \"npm run watch:sass\" \"live-server\""
+    "compile:sass": "node-sass sass/main.scss css/style.css",
+    "start": "concurrently \"npm run watch:sass\" \"live-server\"",
+    "prefix:css": "postcss --use autoprefixer -b 'last 10 versions' css/style.css -o css/style.prefix.css",
+    "compress:css": "node-sass css/style.prefix.css css/style.comp.css --output-style compressed",
+    "build": "concurrently \"npm run compile:sass\" \"npm run prefix:css\" \"npm run compress:css\""
   },
   "keywords": [
-    "saas",
+    "sass",
     "html",
-    "css"
+    "css",
+    "youcode"
   ],
-  "author": "Abdelhamid Ait-Ayoub (rrr3d)",
+  "author": "Abdelhamid Ait-Ayoub ⚡ rrr3d ⚡",
   "license": "ISC",
   "devDependencies": {
+    "autoprefixer": "^6.1.0",
     "concurrently": "^6.0.0",
     "live-server": "^1.2.1",
-    "node-sass": "^5.0.0"
+    "node-sass": "^5.0.0",
+    "postcss": "^8.2.8",
+    "postcss-cli": "^8.3.1"
   }
 }

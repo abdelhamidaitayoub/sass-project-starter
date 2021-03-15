@@ -1,0 +1,17 @@
+///-------------------
+// 📼 VARIABLES &
+// 📼 CSS COSTUM PROPRETYS
+///-------------------
+
+$breakpoints: (
+	sm: 576px,// Small
+	md: 768px, // Medium
+	lg: 992px, // Large
+	xl: 1200px, // Extra large
+	xxl: 1400px // Extra extra large
+);
+
+:root {
+  --c-black: #101010;
+  --c-white: #EEEEEE;
+}
